@@ -1,3 +1,10 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+
+
 [project]
 name = "rubric"
 version = "0.1.0"
@@ -8,3 +15,8 @@ dependencies = []
 
 [project.scripts]
 score = "rubric.score:main"
+
+
+# Hatchling configuration (replaces setuptools.packages.find)
+[tool.hatch.build.targets.wheel]
+packages = ["rubric"]
