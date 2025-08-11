@@ -6,7 +6,11 @@ from rubric.evaluation import PartnershipEvaluation
 ModelAsync._chain_cache = ChainCache()
 
 # Construct our context
-background = Path("LinkedIn Professional Context.md").read_text()
+background = (
+    Path("~/Brian_Code/rubric/LinkedIn Professional Context.md")
+    .expanduser()
+    .read_text()
+)
 
 prompt_str = """
 You are evaluating LinkedIn Learning Professional Certificate partnerships for their strategic value and market potential.
