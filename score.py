@@ -4,7 +4,11 @@ from rubric.partners import prompt_str
 from pathlib import Path
 import argparse
 
-background = Path("LinkedIn Professional Context.md").read_text()
+background = (
+    Path("~/Brian_Code/rubric/LinkedIn Professional Context.md")
+    .expanduser()
+    .read_text()
+)
 
 
 def score_cert(cert_title: str) -> PartnershipEvaluation:
