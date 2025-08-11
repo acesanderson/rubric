@@ -1,7 +1,7 @@
 # Our rubric in a response model
 from pydantic import BaseModel, Field
 from typing import Literal
-from mixin import PartnershipEvaluationMixin
+from rubric.mixin import PartnershipEvaluationMixin
 
 
 class PartnershipEvaluation(BaseModel, PartnershipEvaluationMixin):

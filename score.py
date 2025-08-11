@@ -1,7 +1,7 @@
 from Chain import Prompt, Parser, Model, Chain, Response
-from evaluation import PartnershipEvaluation
+from rubric.evaluation import PartnershipEvaluation
+from rubric.partners import prompt_str
 from pathlib import Path
-from partners import prompt_str
 import argparse
 
 background = Path("LinkedIn Professional Context.md").read_text()

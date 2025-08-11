@@ -11,7 +11,29 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "anthropic>=0.62.0",
+    "chromadb>=1.0.16",
+    "google-api-python-client>=2.178.0",
+    "google-genai>=1.29.0",
+    "instructor>=1.10.0",
+    "jinja2>=3.1.6",
+    "markdown2>=2.5.4",
+    "motor>=3.7.1",
+    "openai>=1.99.7",
+    "pandas>=2.3.1",
+    "pillow>=11.3.0",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.7",
+    "pymongo>=4.14.0",
+    "python-dotenv>=1.1.1",
+    "rapidfuzz>=3.13.0",
+    "rerankers>=0.10.0",
+    "sentence-transformers>=5.1.0",
+    "tiktoken>=0.11.0",
+    "tinydb>=4.8.2",
+    "trino>=0.335.0",
+]
 
 [project.scripts]
 score = "rubric.score:main"

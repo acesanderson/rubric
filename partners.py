@@ -1,7 +1,7 @@
 from Kramer import get_all_certs
 from pathlib import Path
 from Chain import AsyncChain, ModelAsync, Prompt, ChainCache, Parser
-from evaluation import PartnershipEvaluation
+from rubric.evaluation import PartnershipEvaluation
 
 ModelAsync._chain_cache = ChainCache()
 
