@@ -33,7 +33,7 @@ Provide your evaluation as a structured PartnershipEvaluation object.
 """.strip()
 
 
-if __name__ == "__main__":
+def evaluate_all_certs():
     certs = get_all_certs()
 
     # Generate async batch
