@@ -1,4 +1,4 @@
-from Kramer import get_all_certs
+from kramer.database.MongoDB_certs import get_all_certs
 from pathlib import Path
 from Chain import AsyncChain, ModelAsync, Prompt, ChainCache, Parser
 from rubric.evaluation import PartnershipEvaluation
@@ -7,7 +7,7 @@ ModelAsync._chain_cache = ChainCache()
 
 # Construct our context
 background = (
-    Path("~/Brian_Code/rubric/LinkedIn Professional Context.md")
+    Path("~/Brian_Code/rubric-project/src/rubric/LinkedIn Professional Context.md")
     .expanduser()
     .read_text()
 )

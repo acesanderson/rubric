@@ -7,12 +7,7 @@ class PartnershipEvaluationMixin:
     Mixin providing business logic and human-readable methods for partnership evaluations
     """
 
-    @property
-    def rubric(self) -> str:
-        """
-        Returns a general description of the LinkedIn Learning Partnership Evaluation Rubric
-        """
-        return """
+    rubric = """
 LinkedIn Learning Partnership Evaluation Rubric
 
 This rubric evaluates potential Professional Certificate partnerships using three key dimensions (15 points total):
