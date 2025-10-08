@@ -2,9 +2,6 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-
-
-
 [project]
 name = "rubric"
 version = "0.1.0"
@@ -14,6 +11,7 @@ requires-python = ">=3.12"
 dependencies = [
     "anthropic>=0.62.0",
     "database-clients",
+    "conduit",
     "chromadb==0.5.11",  # Exact match
     "google-api-python-client>=2.178.0",
     "google-genai>=1.29.0",
@@ -36,13 +34,15 @@ dependencies = [
     "trino>=0.335.0",
 ]
 
-[project.scripts]
-score = "rubric.score:main"
-
-
 # Hatchling configuration (replaces setuptools.packages.find)
 [tool.hatch.build.targets.wheel]
-packages = ["rubric"]
+packages = ["src/rubric"]
+source = ["src"]
+include = ["src/rubric/py.typed"]
 
 [tool.uv.sources]
-database-clients = { path = "../database-clients" }
+database-clients = { path = "../database-clients", editable = true }
+conduit = { path = "../conduit-project", editable = true }
+
+[project.scripts]
+score = "rubric.score:main"
