@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "anthropic>=0.62.0",
-    "database-clients",
+    "dbclients",
     "conduit",
     "chromadb==1.1.1",  # Exact match
     "google-api-python-client>=2.178.0",
@@ -42,7 +42,7 @@ source = ["src"]
 include = ["src/rubric/py.typed"]
 
 [tool.uv.sources]
-database-clients = { path = "../database-clients", editable = true }
+dbclients = { path = "../dbclients-project", editable = true }
 conduit = { path = "../conduit-project", editable = true }
 kramer = { path = "../kramer-project", editable = true }
 
