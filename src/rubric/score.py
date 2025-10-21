@@ -9,6 +9,9 @@ import sys
 conduit_cache = ConduitCache()
 Model.conduit_cache = conduit_cache
 
+conduit_cache = ConduitCache()
+Model.conduit_cache = conduit_cache
+
 background = (
     Path("~/Brian_Code/rubric-project/src/rubric/LinkedIn Professional Context.md")
     .expanduser()
