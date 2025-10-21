@@ -9,46 +9,21 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "anthropic>=0.62.0",
-<<<<<<< HEAD
     "dbclients",
     "conduit",
     "chromadb==1.1.1",  # Exact match
-||||||| parent of 0b5ff98 (merge)
-<<<<<<< HEAD
-    "chromadb>=1.0.16",
-    "database-clients",
-=======
-    "chromadb==0.5.11",  # Exact match
->>>>>>> 747778d75d4d3b8bca67c891dd9262aff1716d35
-=======
-    "chromadb>=1.0.16",
     "conduit",
-    "database-clients",
->>>>>>> 0b5ff98 (merge)
-    "google-api-python-client>=2.178.0",
-    "google-genai>=1.29.0",
-    "instructor>=1.10.0",
-    "jinja2>=3.1.6",
     "kramer",
     "markdown2>=2.5.4",
     "motor>=3.7.1",
-    "openai>=1.99.7",
     "pandas>=2.3.1",
-    "pillow>=11.3.0",
-    "psycopg2-binary>=2.9.10",
-    "pydantic>=2.11.7",
     "pymongo>=4.14.0",
-    "python-dotenv>=1.1.1",
     "rapidfuzz>=3.13.0",
     "rerankers>=0.10.0",
     "sentence-transformers>=5.1.0",
-    "tiktoken>=0.11.0",
-    "tinydb>=4.8.2",
     "trino>=0.335.0",
 ]
 
-<<<<<<< HEAD
 # Hatchling configuration (replaces setuptools.packages.find)
 [tool.hatch.build.targets.wheel]
 packages = ["src/rubric"]
@@ -62,30 +37,3 @@ kramer = { path = "../kramer-project", editable = true }
 
 [project.scripts]
 score = "rubric.score:main"
-||||||| parent of 0b5ff98 (merge)
-[project.scripts]
-score = "rubric.score:main"
-
-
-# Hatchling configuration (replaces setuptools.packages.find)
-[tool.hatch.build.targets.wheel]
-packages = ["rubric"]
-
-[tool.uv.sources]
-database-clients = { path = "../database-clients" }
-=======
-# ── Hatchling (build) ──────────────────────────────────────────────────────────
-# Point Hatchling at the src/ package; this is the critical bit for src-layout.
-[tool.hatch.build.targets.wheel]
-packages = ["src/rubric"]
-sources = ["src"]
-include = ["src/rubric/py.typed"]
-
-[tool.uv.sources]
-database-clients = { path = "../database-clients", editable = true }
-conduit = { path = "../conduit-project", editable = true }
-
-[project.scripts]
-score = "rubric.score:main"
-
->>>>>>> 0b5ff98 (merge)
