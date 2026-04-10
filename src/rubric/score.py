@@ -1,16 +1,10 @@
-from conduit.sync import Prompt, Model, Conduit, Response, ConduitCache
-from conduit.parser.parser import Parser
+from conduit.config import settings
+from conduit.sync import Prompt, Conduit, GenerationParams, ConduitOptions, Verbosity
 from rubric.evaluation import PartnershipEvaluation
 from rubric.partners import prompt_str
 from pathlib import Path
 import argparse
 import sys
-
-conduit_cache = ConduitCache()
-Model.conduit_cache = conduit_cache
-
-conduit_cache = ConduitCache()
-Model.conduit_cache = conduit_cache
 
 background = (
     Path("~/Brian_Code/rubric-project/src/rubric/LinkedIn Professional Context.md")
@@ -21,19 +15,26 @@ background = (
 
 def score_cert(cert_title: str) -> PartnershipEvaluation:
     prompt = Prompt(prompt_str)
-    parser = Parser(PartnershipEvaluation)
-    model = Model("claude")
+    params = GenerationParams(
+        model="claude",
+        temperature=0.0,
+        response_model=PartnershipEvaluation,
+        output_type="structured_response",
+    )
+    options = ConduitOptions(
+        project_name="rubric",
+        cache=settings.default_cache("rubric"),
+        verbosity=Verbosity.PROGRESS,
+    )
     conduit = Conduit(
-        model=model,
         prompt=prompt,
-        parser=parser,
+        params=params,
+        options=options,
     )
     response = conduit.run(
         input_variables={"title": cert_title, "background": background}
     )
-    assert isinstance(response, Response)
-    assert isinstance(response.content, PartnershipEvaluation)
-    return response.content
+    return response.last.parsed
 
 
 def main():
